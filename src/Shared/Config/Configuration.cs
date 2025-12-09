@@ -17,7 +17,8 @@ public static class Configuration
         var cfg = new StringDictionary();
         var basePath = Directory.GetCurrentDirectory();
         var deploymentMode = Environment.GetEnvironmentVariable("DEPLOYMENT_MODE") ?? "development";
-        var paths = new string[] { "appsettings.cfg",$"appsettings.{deploymentMode}.cfg" };
+        var paths = new string[] { "appsettings.cfg", $"appsettings.{deploymentMode}.cfg" };
+        
         foreach (var path in paths)
         {
             var file = Path.Combine(basePath, path);
